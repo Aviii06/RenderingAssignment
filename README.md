@@ -4,6 +4,8 @@ When you click on the sphere it should change the color of the particular sphere
 
 Here is a [demo-video](https://drive.google.com/file/d/1cArXfnPL2pZB5O6UapjdAnNFZesSzyv6/view?usp=sharing)
 
+The two properties were, directional light specular power and diffuse intensity.
+
 
 # Build Instructions
 
