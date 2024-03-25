@@ -2,6 +2,8 @@
 The goal of the Assignment was to render a scene where you can see 36 spheres, and they have different materials properties in both direction. 
 When you click on the sphere it should change the color of the particular sphere to the normal of the point it was clicked on.
 
+Here is a [demo-video](https://drive.google.com/file/d/1cArXfnPL2pZB5O6UapjdAnNFZesSzyv6/view?usp=sharing)
+
 
 # Build Instructions
 ```
@@ -22,8 +24,8 @@ I made two key observations:
 2) For clicking we need to know whcih object i've selected and at which point in sphere. This is an incredible task, and I tried to implement it by creating a frameBuffer which would just render and objectID instead of the color. Then we can click on the screen to get the color and hence the ObjectID. The problem with this approach is that it requires a lot of refactoring in the already existing framework. Another approach is obviously raycasting. I intially thought of implementing a proper raycasting algorithm, but then I realized that for orthographic projection, we can quite easily implement a very specific algorithm. After that you can easily find the point of intersection, as you know the x,y coordinate and the radius of the sphere. 
 
 During the implementation I made 2 main PRs on the rendering framework. Those can be found here:
-1) 
-2) 
+1) https://github.com/Aviii06/Vivid/pull/27
+2) https://github.com/Aviii06/Vivid/pull/28
 
 Other than it all the code for using the framework can be found on `src/main.cpp` and `assets/shaders/instancing.pixelShader.glsl` and `assets/shaders/instancing.vertexShader.glsl`
 
