@@ -1,0 +1,4 @@
+[submodule "thirdparty/vivid"]
+	path = thirdparty/vivid
+	url = https://github.com/aviii06/vivid
+	branch = instancing
