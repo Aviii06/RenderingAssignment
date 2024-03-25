@@ -6,6 +6,17 @@ Here is a [demo-video](https://drive.google.com/file/d/1cArXfnPL2pZB5O6UapjdAnNF
 
 
 # Build Instructions
+
+## Dependencies
+Only dependency needed is `openGL` for mac and windows. 
+For linux run the below command.
+```
+sudo apt-get update && sudo apt-get install xorg-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev libgl1-mesa-dev libglew-dev mesa-utils freeglut3-dev
+```
+
+After this you just need to build the cpp project using cmake.
+
+## Building
 ```
 git clone https://github.com/Aviii06/RenderingAssignment/
 cd RenderingAssignment
