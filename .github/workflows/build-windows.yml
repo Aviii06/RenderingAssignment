@@ -1,0 +1,24 @@
+name: C/C++ CI Windows
+
+on: [push]
+
+jobs:
+  build:
+
+    strategy:
+      matrix:
+        os: [windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: build
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build . -j 8
+        shell: bash
