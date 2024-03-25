@@ -2,7 +2,7 @@
 #include "common/maths/Vec.h"
 
 const int number_of_sphere = 36;
-float radius = 2.5f;
+float radius = 2.55f;
 
 class ExampleInterface : public RenderingInterface {
 private:
@@ -99,6 +99,13 @@ public:
     // to get the object pretty easily without modifying the renderer by a lot.
     if (InputHandler::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT)) {
       Vivid::Maths::Vec2 mousePos = InputHandler::GetMousePosition();
+      mousePos.x -= Application::GetInstance()->GetWindow().GetViewportPosition().x;
+      mousePos.y -= Application::GetInstance()->GetWindow().GetViewportPosition().y;
+      mousePos.y = Application::GetInstance()->GetWindow().GetViewportHeight() - mousePos.y;
+      mousePos.y -= 9.0f;
+      std::cout << "Mouse Position: " << mousePos.x << " " << mousePos.y
+                << std::endl;
+
       OrthoCamera *camera =
           static_cast<OrthoCamera *>(Application::GetInstance()->GetCamera());
       if (camera != nullptr) {
@@ -107,8 +114,8 @@ public:
         // ImGUI paddings
         // These change according to zoom levels, hence there is no easy work
         // around to get the exact position using imgui
-        rayPos.x += -16.0859;
-        rayPos.y += -38.375;
+//        rayPos.x += -16.0859;
+//        rayPos.y += -38.375;
         for (unsigned int i = 0; i < number_of_sphere; i++) {
           Vivid::Maths::Vec3 translation = translations[i];
           float z2 = -(rayPos.x - translation.x) * (rayPos.x - translation.x) -
